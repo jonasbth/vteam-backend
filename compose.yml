@@ -1,0 +1,8 @@
+services:
+    server:
+        build: ./
+        volumes:
+            - ./db:/server/db
+        ports:
+            - "1337:1337"
+
