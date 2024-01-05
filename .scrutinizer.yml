@@ -1,0 +1,14 @@
+checks:
+    javascript: true
+
+build:
+    environment:
+        node: v20.10.0
+
+    nodes:
+        analysis:
+            tests:
+                override:
+                    - js-scrutinizer-run
+
+        # tests: true
