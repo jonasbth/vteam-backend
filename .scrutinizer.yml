@@ -3,7 +3,7 @@ checks:
 
 build:
     environment:
-        node: v20.10.0
+        node: v20.5.1
 
     nodes:
         analysis:
