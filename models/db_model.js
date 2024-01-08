@@ -4,7 +4,13 @@
  */
 "use strict";
 
-const db = require('better-sqlite3')('./db/bike-rentals.sqlite');
+let dbName = "bike-rentals";
+
+if (process.env.NODE_ENV === 'test') {
+    dbName = "bike-rentals-test";
+}
+
+const db = require('better-sqlite3')(`./db/${dbName}.sqlite`);
 
 /**
  * Check if a position (lat, lon) is in a parking zone.
@@ -26,6 +32,10 @@ function posInParkingZone(cityId, lat, lon) {
 }
 
 const dbModel = {
+    getDB: function () {
+        return db;
+    },
+
     closeDB: function () {
         db.close();
     },

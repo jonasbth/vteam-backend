@@ -7,6 +7,8 @@ const globals = require("globals");
 module.exports = [
     js.configs.recommended,
     {
+        ignores: ["coverage/"],
+
         languageOptions: {
             ecmaVersion: "latest",
             sourceType: "commonjs",

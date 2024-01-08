@@ -48,3 +48,6 @@ const server = app.listen(port, () => {
     console.log(`Bike server listening on port ${port}`);
 });
 
+// export is used when testing
+module.exports = server;
+

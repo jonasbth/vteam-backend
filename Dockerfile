@@ -1,18 +1,19 @@
 FROM node:20-slim
 
+ENV LANG C.utf8
+ENV TZ Europe/Stockholm
+ENV NODE_ENV production
+
 WORKDIR /server
 
 COPY package*.json ./
 
 RUN npm install
 
-# The .dockerignore file prevents copying of node_modules/ and db/
+# The .dockerignore file prevents copying of node_modules/, db/ and others
 COPY . ./
 
 EXPOSE 1337
-
-ENV LANG C.utf8
-ENV TZ Europe/Stockholm
 
 ENTRYPOINT ["node", "server.js"]
 

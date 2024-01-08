@@ -27,4 +27,7 @@ jobs:
     - name: Run ESLint
       run: npm run lint
 #      working-directory: ./backend
+    - name: Run unit tests and code coverage
+      run: npm run test-ci
+#      working-directory: ./backend
 
