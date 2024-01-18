@@ -2,7 +2,7 @@ services:
     server:
         build: ./
         volumes:
-            - ./db:/server/db
+            - ./db:/backend/db
         ports:
             - "1337:1337"
 

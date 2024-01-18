@@ -4,7 +4,7 @@ ENV LANG C.utf8
 ENV TZ Europe/Stockholm
 ENV NODE_ENV production
 
-WORKDIR /server
+WORKDIR /backend
 
 COPY package*.json ./
 
