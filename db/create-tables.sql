@@ -1,5 +1,6 @@
 --
 -- Schema for database bike-rentals.sqlite
+-- © Jonas B., Vteam 2023 Group 8.
 --
 
 PRAGMA journal_mode=WAL;

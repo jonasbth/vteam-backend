@@ -1,6 +1,6 @@
 /**
  * The bike rental backend server app.
- * © Vteam 2023 Group 8.
+ * © Jonas B., Vteam 2023 Group 8.
  */
 "use strict";
 
