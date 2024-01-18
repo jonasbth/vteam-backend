@@ -1,4 +1,5 @@
 node_modules/
+db/*.sqlite
 .nyc_output/
 coverage/
 *.backup
