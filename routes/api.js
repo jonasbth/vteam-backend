@@ -1,6 +1,6 @@
 /**
  * API routes.
- * © Vteam 2023 Group 8.
+ * © Jonas B., Vteam 2023 Group 8.
  */
 "use strict";
 
@@ -9,6 +9,14 @@ const router = express.Router();
 const db = require("../models/db_model.js");
 
 const urlencodedParser = express.urlencoded({ extended: false });
+
+/**
+ * Middleware logging request to console.
+ */
+function logToConsole(req, res, next) {
+    console.log(`${new Date().toLocaleTimeString('sv-SE')} ${req.method} ${req.url}`);
+    next();
+}
 
 /**
  * Get all cities.
@@ -653,7 +661,7 @@ router.get('/rides/:id', (req, res) => {
 /**
  * Start a new ride.
  */
-router.post('/rides', urlencodedParser, (req, res) => {
+router.post('/rides', logToConsole, urlencodedParser, (req, res) => {
     const result = db.startRide(req.body);
 
     if (result.changes === 0) {
@@ -675,7 +683,7 @@ router.post('/rides', urlencodedParser, (req, res) => {
  * Finish a ride.
  * Calculate price and withdraw user's balance.
  */
-router.put('/rides', urlencodedParser, (req, res) => {
+router.put('/rides', logToConsole, urlencodedParser, (req, res) => {
     const result = db.finishRide(req.body);
 
     if (result.changes === 0) {
